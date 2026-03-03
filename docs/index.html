@@ -6,17 +6,16 @@
     <title>Lita Light | Open-Source Desktop Monitor Light App</title>
     <meta
       name="description"
-      content="Lita Light is an open-source desktop monitor light app. Turn your screen into a full-screen white light with adjustable color temperature, brightness, and always-on-top controls."
+      content="Lita Light is an open-source desktop monitor light app for creators. Use your screen as a full-screen white light with adjustable brightness and color temperature."
     />
     <meta
       name="keywords"
       content="monitor light app, white screen app, desktop softbox, fill light app, fullscreen screen light, color temperature app, open source tauri app"
     />
-    <meta name="author" content="Ahmad Yusuf" />
     <meta property="og:title" content="Lita Light" />
     <meta
       property="og:description"
-      content="Open-source desktop monitor light app for content creators and streamers."
+      content="Open-source desktop monitor light app with fast controls and downloadable builds for macOS, Windows, and Linux."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ahmadyusufcodes.github.io/lita/" />
@@ -24,121 +23,125 @@
     <meta name="theme-color" content="#101722" />
     <link rel="canonical" href="https://ahmadyusufcodes.github.io/lita/" />
     <link rel="stylesheet" href="./styles.css" />
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Lita Light",
-        "applicationCategory": "MultimediaApplication",
-        "operatingSystem": "Windows, macOS, Linux",
-        "description": "Open-source desktop monitor light app with adjustable brightness and color temperature.",
-        "url": "https://ahmadyusufcodes.github.io/lita/",
-        "downloadUrl": "https://github.com/ahmadyusufcodes/lita/actions/workflows/build-artifacts.yml",
-        "softwareVersion": "0.1.0",
-        "author": {
-          "@type": "Person",
-          "name": "Ahmad Yusuf"
-        }
-      }
-    </script>
+    <script type="module" src="./site.js" defer></script>
   </head>
   <body>
-    <div class="bg-glow bg-glow-a" aria-hidden="true"></div>
-    <div class="bg-glow bg-glow-b" aria-hidden="true"></div>
+    <div class="bg bg-a" aria-hidden="true"></div>
+    <div class="bg bg-b" aria-hidden="true"></div>
 
-    <header class="site-header">
-      <a class="logo" href="./">Lita Light</a>
-      <nav>
+    <header class="container site-header">
+      <a class="brand" href="./">Lita Light</a>
+      <nav class="nav">
         <a href="https://github.com/ahmadyusufcodes/lita" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://github.com/ahmadyusufcodes/lita/actions/workflows/build-artifacts.yml" target="_blank" rel="noreferrer">Builds</a>
+        <a href="https://github.com/ahmadyusufcodes/lita/actions/workflows/build-artifacts.yml" target="_blank" rel="noreferrer">Build Pipeline</a>
       </nav>
     </header>
 
-    <main>
+    <main class="container">
       <section class="hero">
-        <p class="eyebrow">Open Source Monitor Light</p>
-        <h1>Turn Any Monitor Into a Clean, Controlled Studio Light</h1>
-        <p class="lead">
-          Lita Light is a desktop white screen and color-temperature light app
-          for creators, streamers, and remote teams. It delivers true flat
-          full-screen light with fast controls and no clutter.
-        </p>
-        <div class="cta-row">
+        <div>
+          <p class="eyebrow">Desktop Monitor Light App</p>
+          <h1>Turn Your Display Into a Controlled Fill Light</h1>
+          <p class="lead">
+            Lita Light is a clean open-source white screen app for creators,
+            streamers, video calls, and desk setups. Use fullscreen light with
+            fast controls for brightness, temperature, and on-top behavior.
+          </p>
+          <div class="hero-actions">
+            <a
+              class="button button-primary"
+              href="https://github.com/ahmadyusufcodes/lita"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View Source
+            </a>
+            <a
+              class="button button-secondary"
+              href="#downloads"
+            >
+              Get Latest Builds
+            </a>
+          </div>
+          <p class="seo-line">
+            Keywords: monitor light app, white screen app, desktop softbox,
+            fullscreen screen light.
+          </p>
+        </div>
+
+        <aside class="app-card" aria-label="App feature summary">
+          <p class="app-card-label">Lita Light</p>
+          <ul>
+            <li>True flat full-screen light</li>
+            <li>1800K to 9000K color temperature</li>
+            <li>Scroll + Shift controls</li>
+            <li>Draggable always-on-top panel</li>
+          </ul>
+          <p class="app-card-meta">Built with Tauri, TypeScript, Rust</p>
+        </aside>
+      </section>
+
+      <section class="panel" id="downloads">
+        <div class="panel-head">
+          <h2>Download Latest Builds</h2>
           <a
-            class="button button-primary"
+            class="tiny-link"
+            id="latest-run-link"
             href="https://github.com/ahmadyusufcodes/lita/actions/workflows/build-artifacts.yml"
             target="_blank"
             rel="noreferrer"
           >
-            Download Artifacts
-          </a>
-          <a
-            class="button button-secondary"
-            href="https://github.com/ahmadyusufcodes/lita"
-            target="_blank"
-            rel="noreferrer"
-          >
-            View Source
+            View workflow runs
           </a>
         </div>
-        <p class="meta">
-          Keywords: monitor light app, white screen app, desktop softbox,
-          fullscreen fill light.
+        <p class="panel-copy">
+          Buttons below point to the newest successful cross-platform build.
+          If a platform button is disabled, that artifact was not found yet.
         </p>
-      </section>
 
-      <section class="panel">
-        <h2>What You Get</h2>
-        <div class="grid">
-          <article>
-            <h3>True Full-Screen Light</h3>
-            <p>
-              Flat color output without texture overlays, optimized for
-              practical on-camera fill light use.
-            </p>
+        <div class="download-grid">
+          <article class="download-card">
+            <h3>Windows x64</h3>
+            <p>MSI / NSIS bundle</p>
+            <a class="button button-download disabled" data-artifact="lita-light-windows-x64" href="#" aria-disabled="true">Preparing...</a>
           </article>
-          <article>
-            <h3>Temperature + Brightness</h3>
-            <p>
-              Tune from warm to cool (`1800K-9000K`) and adjust brightness
-              quickly in live scenarios.
-            </p>
+          <article class="download-card">
+            <h3>macOS Apple Silicon</h3>
+            <p>APP / DMG bundle</p>
+            <a class="button button-download disabled" data-artifact="lita-light-macos-apple-silicon" href="#" aria-disabled="true">Preparing...</a>
           </article>
-          <article>
-            <h3>Fast Interaction Model</h3>
-            <p>
-              Scroll to change brightness, Shift + Scroll to change temperature,
-              and drag the controls panel anywhere.
-            </p>
+          <article class="download-card">
+            <h3>macOS Intel</h3>
+            <p>APP / DMG bundle</p>
+            <a class="button button-download disabled" data-artifact="lita-light-macos-intel" href="#" aria-disabled="true">Preparing...</a>
           </article>
-          <article>
-            <h3>Always on Top</h3>
-            <p>
-              Keep your light over other windows during calls, recording, and
-              content sessions.
-            </p>
+          <article class="download-card">
+            <h3>Linux x64</h3>
+            <p>DEB / AppImage bundle</p>
+            <a class="button button-download disabled" data-artifact="lita-light-linux-x64" href="#" aria-disabled="true">Preparing...</a>
           </article>
         </div>
+        <p class="download-status" id="download-status">Checking latest successful build...</p>
       </section>
 
-      <section class="panel panel-alt">
-        <h2>Supported Platforms</h2>
-        <ul class="platforms">
-          <li>Linux x64</li>
-          <li>Windows x64</li>
-          <li>macOS Intel</li>
-          <li>macOS Apple Silicon</li>
-        </ul>
+      <section class="panel panel-safety">
+        <h2>Screen Safety Notice</h2>
         <p>
-          Every push runs a GitHub Actions pipeline that builds platform bundles
-          and publishes downloadable artifacts.
+          High brightness and static images can stress some screens.
+          Use responsibly to reduce burn-in, retention, and thermal wear risk.
         </p>
+        <ul class="safety-list">
+          <li>Avoid long sessions at 100% brightness, especially on OLED panels.</li>
+          <li>Lower brightness for long sessions and vary temperature periodically.</li>
+          <li>Take regular short breaks (for example every 20-30 minutes).</li>
+          <li>If your display feels hot, reduce intensity and let it cool down.</li>
+        </ul>
       </section>
     </main>
 
-    <footer class="site-footer">
+    <footer class="container site-footer">
       <p>
-        Built with Tauri, TypeScript, and Rust by
+        Built by
         <a href="https://github.com/ahmadyusufcodes" target="_blank" rel="noreferrer">Ahmad Yusuf</a>.
       </p>
     </footer>
