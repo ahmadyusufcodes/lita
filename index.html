@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lita Light</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <div class="light-layer" id="light-layer" aria-hidden="true"></div>
+
+    <main class="hud" id="hud">
+      <header class="hud__header hud__drag-handle" id="hud-header">
+        <p class="eyebrow">Lita Light</p>
+        <h1>Display Light</h1>
+        <p class="subtitle">
+          Turn your monitor into a controlled continuous light.
+        </p>
+      </header>
+
+      <section class="control">
+        <div class="control__label">
+          <label for="temperature">Temperature</label>
+          <output id="temperature-value">5200K</output>
+        </div>
+        <input
+          id="temperature"
+          type="range"
+          min="1800"
+          max="9000"
+          step="50"
+          value="5200"
+        />
+      </section>
+
+      <section class="control">
+        <div class="control__label">
+          <label for="brightness">Brightness</label>
+          <output id="brightness-value">100%</output>
+        </div>
+        <input
+          id="brightness"
+          type="range"
+          min="10"
+          max="100"
+          step="1"
+          value="100"
+        />
+      </section>
+
+      <section class="presets">
+        <button type="button" class="preset" data-kelvin="2200">Candle</button>
+        <button type="button" class="preset" data-kelvin="3200">Warm</button>
+        <button type="button" class="preset" data-kelvin="5000">Studio</button>
+        <button type="button" class="preset" data-kelvin="6500">
+          Daylight
+        </button>
+      </section>
+
+      <section class="actions">
+        <button type="button" id="toggle-fullscreen">Enter Fullscreen</button>
+        <button type="button" id="toggle-on-top">Always on Top: Off</button>
+        <button type="button" id="toggle-controls">Hide Controls</button>
+      </section>
+
+      <p class="meta" id="color-readout">#ffffff</p>
+      <p class="hint">
+        Scroll backdrop: brightness · Shift + Scroll: temperature · Drag header:
+        move controls
+      </p>
+    </main>
+
+    <p class="floating-guide" id="floating-guide">
+      Scroll brightness · Shift + Scroll temperature · Drag panel header
+    </p>
+
+    <button type="button" class="reveal-controls" id="reveal-controls">
+      Show controls
+    </button>
+  </body>
+</html>
