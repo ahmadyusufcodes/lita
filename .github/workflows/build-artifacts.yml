@@ -23,18 +23,22 @@ jobs:
           - name: Linux (x64)
             os: ubuntu-22.04
             target: x86_64-unknown-linux-gnu
+            bundles: appimage deb
             artifact_name: lita-light-linux-x64
           - name: Windows (x64)
             os: windows-2022
             target: x86_64-pc-windows-msvc
+            bundles: msi nsis
             artifact_name: lita-light-windows-x64
           - name: macOS Intel
             os: macos-13
             target: x86_64-apple-darwin
+            bundles: app dmg
             artifact_name: lita-light-macos-intel
           - name: macOS Apple Silicon
             os: macos-14
             target: aarch64-apple-darwin
+            bundles: app dmg
             artifact_name: lita-light-macos-apple-silicon
 
     steps:
@@ -70,11 +74,11 @@ jobs:
 
       - name: Build Tauri bundles (Unix)
         if: runner.os != 'Windows'
-        run: npm run tauri build -- --target ${{ matrix.target }} --bundles all
+        run: npm run tauri build -- --target ${{ matrix.target }} --bundles ${{ matrix.bundles }}
 
       - name: Build Tauri bundles (Windows)
         if: runner.os == 'Windows'
-        run: npm run tauri build -- --target ${{ matrix.target }} --bundles all
+        run: npm run tauri build -- --target ${{ matrix.target }} --bundles ${{ matrix.bundles }}
 
       - name: Upload bundle artifacts
         uses: actions/upload-artifact@v4
