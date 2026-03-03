@@ -5,6 +5,12 @@ It turns your monitor into a controllable fill light for content creation, video
 
 Keywords: monitor light app, white screen app, desktop softbox, virtual fill light, color temperature light, fullscreen screen light.
 
+## Live Page
+
+- Project website: https://ahmadyusufcodes.github.io/lita/
+- Website source: `/docs`
+- Auto deploy workflow: `/.github/workflows/deploy-pages.yml`
+
 ## Features
 
 - Full-screen monitor light with true flat color output
@@ -60,4 +66,3 @@ Lita Light provides a cleaner, purpose-built desktop light with control over int
 - TypeScript
 - Vite
 - Rust
-# lita
