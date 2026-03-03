@@ -31,12 +31,12 @@ jobs:
             bundles: msi nsis
             artifact_name: lita-light-windows-x64
           - name: macOS Intel
-            os: macos-13
+            os: macos-15-intel
             target: x86_64-apple-darwin
             bundles: app dmg
             artifact_name: lita-light-macos-intel
           - name: macOS Apple Silicon
-            os: macos-14
+            os: macos-15
             target: aarch64-apple-darwin
             bundles: app dmg
             artifact_name: lita-light-macos-apple-silicon
