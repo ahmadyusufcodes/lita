@@ -1,4 +1,4 @@
-# Lita Light
+## Lita Light
 
 Lita Light is an open-source desktop screen light app built with Tauri + TypeScript.
 It turns your monitor into a controllable fill light for content creation, video calls, streaming, photography, and recording setups.
